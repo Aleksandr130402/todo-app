@@ -1,9 +1,12 @@
-.todo-title h1{
+h1 {
+    font-size: 36px;
     float: left;
 }
 
-.todo-list-state {
-    margin-top: 1.2rem;
-    margin-left: 4rem;
+h2 {
+    color: darkgrey;
+    font-size: 24px;
     float: right;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
 }

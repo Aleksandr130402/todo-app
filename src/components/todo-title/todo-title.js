@@ -1,15 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import './todo-title.css'
 
-
-
-const TodoTitle = () => {
+const TodoTitle = ({toDo, done}) => {
     return (
     <div className="todo-title">
       <h1> Todo List </h1>
-      <p className="todo-list-state">1 more to do, 3 done</p>     
+      <h2>{toDo} more to do, {done} done</h2>     
     </div>
     );
   };
