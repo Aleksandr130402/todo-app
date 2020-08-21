@@ -61,6 +61,12 @@ export default class App extends Component {
     });
   };
 
+
+
+  showItem = (searchValue) => {
+    
+  }
+
   toggleProperty(arr, id, propName) {
 
       const idx = arr.findIndex((el) => el.id === id);
@@ -107,7 +113,7 @@ export default class App extends Component {
       <div className="todo-app">
         <TodoTitle toDo={todoCount} done={doneCount}/>
         <div className="top-panel d-flex">
-          <TodoSearch/>
+          <TodoSearch showItem={ this.showItem }/>
           <TodoSearchBtn/>
         </div>
         <TodoList todos={todoData} 

@@ -2,3 +2,7 @@
     margin-top: 10px;
     
 }
+
+.todo-add-item input{
+    margin-right: 3px;
+}
