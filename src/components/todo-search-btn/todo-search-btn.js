@@ -1,15 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-import './todo-search-btn.css';
+import './todo-search-btn.css'
 
-export default class TodoSearchBtn extends Component {
-    render() {
+const TodoSearchBtn = ({showAllItems, showActiveItems, showDoneItems}) => {
+  
         return (
         <div className="todo-search-btn">
-            <button className="btn btn-info active" onClick>All</button>
-            <button className="btn btn-outline-secondary" onClick>Active</button>
-            <button className="btn btn-outline-secondary" onClick>Done</button>
+            <button className="btn btn-info active" onClick={showAllItems}>All</button>
+            <button className="btn btn-outline-secondary" onClick={showActiveItems}>Active</button>
+            <button className="btn btn-outline-secondary" onClick={showDoneItems}>Done</button>
         </div>       
         );
-    };
+   
 };
+
+export default TodoSearchBtn

@@ -2,33 +2,27 @@ import React, { Component } from 'react';
 
 import './todo-search.css';
  
-class TodoSearch extends Component {
+export default class TodoSearch extends Component {
 
   state = {
-    searchValue: ''
+    term: ''
   }
 
-  onShow = (e) => {
-    this.setState({
-      searchValue: e.target.value
-    });  
+  onSearchChange = (e) => {
+    const term = e.target.value;
+    this.setState({ term });  
+    this.props.onSearchChange(term);
   };
 
-  componentDidUpdate() {
-    this.props.showItem(this.state.searchValue);
-  };
-
-    render() {
-      return (
-      <div >
-        <input type="text" 
-        className="todo-search" 
-        placeholder="search"
-        onChange={this.onShow}
-        value={this.state.searchValue}></input>
-      </div>
-      );
-    };  
+  render() {
+    return (
+    
+      <input type="text" 
+      className="todo-search" 
+      placeholder="search"
+      value={this.state.term}
+      onChange={this.onSearchChange}/>
+    
+    );
+  };  
 };
-
-export default TodoSearch;
