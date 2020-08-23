@@ -19,7 +19,7 @@ export default class App extends Component {
       this.createTodoItem('Drink Coffee')
     ],
     term: '',
-    filter: 'active'
+    filter: 'all'
   };
 
   createTodoItem(label) {
@@ -102,6 +102,10 @@ export default class App extends Component {
     this.setState({ term });
   };
 
+  onFilterChange = (filter) => {
+    this.setState({ filter });
+  }
+
   search(items, term) {
     if (term.length === 0) {
       return items;
@@ -142,9 +146,9 @@ export default class App extends Component {
         <TodoTitle toDo={todoCount} done={doneCount}/>
         <div className="top-panel d-flex">
         <TodoSearch onSearchChange={ this.onSearchChange }/>
-        <TodoSearchBtn showAllItems={this.filter(todoData, 'all')}
-        showActiveItems={this.filter(todoData, 'active')}
-        showDoneItems={this.filter(todoData, 'done')}/>
+        <TodoSearchBtn 
+        filter={ filter }
+        onFilterChange={this.onFilterChange}/>
         </div>
         <TodoList todos={visibleItems} 
         onDeleted={ this.deleteItem }

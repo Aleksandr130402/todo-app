@@ -1,8 +1,5 @@
-.todo-search-btn {
-    display: inline-block;
-    align-items: right;
+.btn-group {
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
-.btn {
-    margin: 1px;
-}
